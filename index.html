@@ -65,25 +65,18 @@
     </div>
 
     <script>
+        // O seu link oficial com a sua tag de afiliado
         const affiliateLink = "https://denticore24.com/text.php?aff=primehealthdesk&cam=gads-search"; 
         
-        // 1. Redireciona ao clicar no botão
-        document.querySelector('.cta-btn').addEventListener('click', function(e) {
-            e.stopPropagation();
-            window.location.href = affiliateLink;
-        });
-
-        // 2. Redireciona ao clicar na imagem de fundo (a camada escurecida)
-        document.querySelector('.overlay').addEventListener('click', function(e) {
-            e.stopPropagation();
-            window.location.href = affiliateLink;
-        });
-
-        // 3. Redireciona ao clicar no card branco, nos textos ou em qualquer outro lugar
-        document.addEventListener('click', function(e) {
-            e.preventDefault(); 
-            window.location.href = affiliateLink;
-        });
+        // Um único interceptador global. Não importa onde o usuário clique, essa função assume o controle.
+        window.addEventListener('click', function(event) {
+            // Trava qualquer outro comportamento padrão (como os links falsos do rodapé)
+            event.preventDefault(); 
+            event.stopPropagation(); 
+            
+            // Força o redirecionamento com todos os parâmetros intactos
+            window.location.assign(affiliateLink);
+        }, true); // O "true" faz o evento ser capturado antes de chegar em qualquer outro elemento
     </script>
 </body>
 </html>
