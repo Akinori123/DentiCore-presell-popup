@@ -49,17 +49,19 @@
         const affiliateLink = "https://denticore24.com/text.php?aff=primehealthdesk&cam=gads-search"; 
         
         function gtag_report_conversion(url) {
-          var callback = function () {
-            if (typeof(url) != 'undefined') {
-              window.location.assign(url);
-            }
-          };
-          gtag('event', 'conversion', {
-              'send_to': 'AW-434605762/fA0mCIPg77YcEMKdns8B',
-              'event_callback': callback,
-              'event_timeout': 2000
-          });
-          return false;
+            var callback = function () {
+                if (typeof(url) != 'undefined') {
+                    window.location.assign(url);
+                }
+            };
+
+            // Evento de Clique de Saída
+            gtag('event', 'conversion', {
+                'send_to': 'AW-434605762/FKxZCNe44LYcEMKdns8B',
+                'event_callback': callback,
+                'event_timeout': 2000
+            });
+            return false;
         }
 
         document.getElementById('btn-compra').addEventListener('click', function(event) {
