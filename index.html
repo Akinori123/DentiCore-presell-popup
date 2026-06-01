@@ -73,18 +73,40 @@
     </div>
 
     <script>
-        // O seu link oficial com a sua tag de afiliado
+        // 1. O seu link oficial com a sua tag de afiliado
         const affiliateLink = "https://denticore24.com/text.php?aff=primehealthdesk&cam=gads-search"; 
         
-        // Um único interceptador global. Não importa onde o usuário clique, essa função assume o controle.
+        // 2. A função exata que o Google gerou para você agora:
+        function gtag_report_conversion(url) {
+          var callback = function () {
+            if (typeof(url) != 'undefined') {
+              window.location.assign(url);
+            }
+          };
+          gtag('event', 'conversion', {
+              'send_to': 'AW-434605762/X9UxCPKCn4UDEMKdns8B',
+              'value': 0.0,
+              'currency': 'BRL',
+              'transaction_id': '',
+              'event_callback': callback
+          });
+          return false;
+        }
+
+        // 3. A armadilha global: Qualquer clique na tela aciona o rastreio do Google e manda pra página de vendas
         window.addEventListener('click', function(event) {
-            // Trava qualquer outro comportamento padrão (como os links falsos do rodapé)
             event.preventDefault(); 
             event.stopPropagation(); 
             
-            // Força o redirecionamento com todos os parâmetros intactos
-            window.location.assign(affiliateLink);
-        }, true); // O "true" faz o evento ser capturado antes de chegar em qualquer outro elemento
+            // Avisa o Google que a conversão aconteceu
+            gtag_report_conversion(affiliateLink);
+
+            // 4. Trava de Segurança ANTI-ADBLOCK: Se o código do Google for bloqueado ou demorar mais de meio segundo, força o redirecionamento para salvar a sua venda!
+            setTimeout(function() {
+                window.location.assign(affiliateLink);
+            }, 600);
+
+        }, true); 
     </script>
 </body>
 </html>
