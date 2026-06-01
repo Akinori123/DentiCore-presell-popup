@@ -76,7 +76,7 @@
         // 1. Seu link oficial de afiliado
         const affiliateLink = "https://denticore24.com/text.php?aff=primehealthdesk&cam=gads-search"; 
         
-        // 2. Função de conversão do Google Ads (Atualizada com novo ID)
+        // 2. Função de conversão do Google Ads
         function gtag_report_conversion(url) {
           var callback = function () {
             if (typeof(url) != 'undefined') {
@@ -90,20 +90,11 @@
           return false;
         }
 
-        // 3. Armadilha global de cliques + Trava Anti-Adblocker
-        window.addEventListener('click', function(event) {
-            event.preventDefault(); 
-            event.stopPropagation(); 
-            
-            // Dispara a conversão no Google
+        // 3. Trava precisa: Só dispara se clicar no botão .cta-btn
+        document.querySelector('.cta-btn').addEventListener('click', function(event) {
+            // Não bloqueia o clique se não for o botão, mas como estamos mirando no botão, está seguro
             gtag_report_conversion(affiliateLink);
-
-            // Se o Google falhar ou demorar, redireciona o cliente em meio segundo
-            setTimeout(function() {
-                window.location.assign(affiliateLink);
-            }, 600);
-
-        }, true); 
+        });
     </script>
 </body>
 </html>
