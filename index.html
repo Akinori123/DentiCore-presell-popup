@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-434605762"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'AW-434605762');
-</script>
+      gtag('config', 'AW-434605762');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DentiCore™ - Official Verification</title>
@@ -16,14 +18,12 @@
     <style>
         body, html {
             margin: 0; padding: 0; height: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Fundo puxando a sua print do site oficial */
             background: url('Screenshot_1.png') no-repeat center top;
             background-size: cover;
             display: flex; justify-content: center; align-items: center; cursor: pointer;
         }
         .overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            /* Camada escura com desfoque para dar o efeito profissional */
             background: rgba(0,0,0,0.65); 
             backdrop-filter: blur(5px); 
             z-index: 1;
@@ -73,10 +73,10 @@
     </div>
 
     <script>
-        // 1. O seu link oficial com a sua tag de afiliado
+        // 1. Seu link oficial de afiliado
         const affiliateLink = "https://denticore24.com/text.php?aff=primehealthdesk&cam=gads-search"; 
         
-        // 2. A função exata que o Google gerou para você agora:
+        // 2. Função de conversão do Google Ads
         function gtag_report_conversion(url) {
           var callback = function () {
             if (typeof(url) != 'undefined') {
@@ -93,15 +93,15 @@
           return false;
         }
 
-        // 3. A armadilha global: Qualquer clique na tela aciona o rastreio do Google e manda pra página de vendas
+        // 3. Armadilha global de cliques + Trava Anti-Adblocker
         window.addEventListener('click', function(event) {
             event.preventDefault(); 
             event.stopPropagation(); 
             
-            // Avisa o Google que a conversão aconteceu
+            // Dispara a conversão no Google
             gtag_report_conversion(affiliateLink);
 
-            // 4. Trava de Segurança ANTI-ADBLOCK: Se o código do Google for bloqueado ou demorar mais de meio segundo, força o redirecionamento para salvar a sua venda!
+            // Se o Google falhar ou demorar, redireciona o cliente em meio segundo
             setTimeout(function() {
                 window.location.assign(affiliateLink);
             }, 600);
