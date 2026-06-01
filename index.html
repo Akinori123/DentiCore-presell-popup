@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-434605762"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-434605762');
-    </script>
+    <!-- Flow Tracking: DentiCore - Presell Vercel -->
+    <script src="https://flow-tracking-cdn-production.up.railway.app/v2/loader.js"
+            data-track="efecdc4d-a658-4242-9b0e-6fd69fbb6e6c"
+            data-endpoint="https://api.flowtrackingtool.com"
+            data-cdn-base="https://flow-tracking-cdn-production.up.railway.app"
+            data-api-base="https://api.flowtrackingtool.com"
+            data-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFja0lkIjoiZWZlY2RjNGQtYTY1OC00MjQyLTliMGUtNmZkNjlmYmI2ZTZjIiwiYXVkIjoiZmxvd3RyazplbWJlZCIsImlzcyI6ImZsb3d0cmsiLCJraWQiOiJhMjcxMjA2MzZhOWE5ZjdiIiwiaWF0IjoxNzgwMzA2MTkyLCJleHAiOjE4MTE4NDIxOTJ9.wP3xNLC1Gj8jhVunHhkMPcJp1TyKeNxMYUmPMyBElMI"
+            async crossorigin="anonymous"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,26 +47,11 @@
     </div>
 
     <script>
-        const affiliateLink = "https://denticore24.com/text.php?aff=primehealthdesk&cam=gads-search"; 
+        // Atenção ao link abaixo!
+        const linkDestino = "https://denticore24.com/text.php?aff=primehealthdesk&cam=gads-search"; 
         
-        function gtag_report_conversion(url) {
-            var callback = function () {
-                if (typeof(url) != 'undefined') {
-                    window.location.assign(url);
-                }
-            };
-
-            // Evento de Clique NOVO ATUALIZADO
-            gtag('event', 'conversion', {
-                'send_to': 'AW-434605762/XVP7CIac5bYcEMKdns8B',
-                'event_callback': callback,
-                'event_timeout': 2000
-            });
-            return false;
-        }
-
-        document.getElementById('btn-compra').addEventListener('click', function(event) {
-            gtag_report_conversion(affiliateLink);
+        document.getElementById('btn-compra').addEventListener('click', function() {
+            window.location.assign(linkDestino);
         });
     </script>
 </body>
