@@ -76,7 +76,7 @@
         // 1. Seu link oficial de afiliado
         const affiliateLink = "https://denticore24.com/text.php?aff=primehealthdesk&cam=gads-search"; 
         
-        // 2. Função de conversão do Google Ads
+        // 2. Função de conversão do Google Ads (Atualizada com novo ID)
         function gtag_report_conversion(url) {
           var callback = function () {
             if (typeof(url) != 'undefined') {
@@ -84,10 +84,7 @@
             }
           };
           gtag('event', 'conversion', {
-              'send_to': 'AW-434605762/X9UxCPKCn4UDEMKdns8B',
-              'value': 0.0,
-              'currency': 'BRL',
-              'transaction_id': '',
+              'send_to': 'AW-434605762/fA0mCIPg77YcEMKdns8B',
               'event_callback': callback
           });
           return false;
