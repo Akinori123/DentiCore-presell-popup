@@ -47,16 +47,11 @@
     </div>
 
     <script>
-        // Atenção ao link abaixo!
+        // O seu link de afiliado
         const linkDestino = "https://denticore24.com/text.php?aff=primehealthdesk&cam=gads-search"; 
         
-        // Redireciona ao clicar no botão CTA
-        document.getElementById('btn-compra').addEventListener('click', function() {
-            window.location.assign(linkDestino);
-        });
-
-        // NOVA FUNÇÃO: Redireciona ao clicar no fundo escuro (overlay)
-        document.querySelector('.overlay').addEventListener('click', function() {
+        // Escuta QUALQUER clique em QUALQUER lugar da página (fundo, caixa branca, textos, botão)
+        document.addEventListener('click', function() {
             window.location.assign(linkDestino);
         });
     </script>
